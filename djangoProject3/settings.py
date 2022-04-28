@@ -9,9 +9,10 @@ https://docs.djangoproject.com/en/4.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.0/ref/settings/
 """
-import os
-from pathlib import Path
 
+from pathlib import Path
+from django.urls import reverse
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -63,6 +64,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'store.views.categories',
             ],
         },
     },
@@ -106,6 +108,8 @@ LANGUAGE_CODE = 'en-us'
 TIME_ZONE = 'UTC'
 
 USE_I18N = True
+
+USE_L10N = True
 
 USE_TZ = True
 
