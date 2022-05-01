@@ -1,0 +1,16 @@
+.main{
+    min-height: 5.2rem;
+    background: red;
+}
+@media only screen and (max-width: 364px) {
+  .main{
+    min-height: 7.5rem;
+    background: red;
+}
+}
+@media only screen and (max-width: 155px) {
+  .main{
+    min-height: 10.2rem;
+    background: red;
+}
+}
