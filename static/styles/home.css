@@ -1,3 +1,16 @@
+*{
+    font-family: 'Exo', sans-serif !important;
+    font-family: 'Mulish', sans-serif !important;
+    font-family: 'Oxygen', sans-serif !important;
+    font-family: 'Raleway', sans-serif !important;
+}
+
+.text-bas{
+    margin-top: 0;
+    margin-bottom: 0.3rem;
+}
+
+
 .videoHeader {
     position: relative;
     width: 100%;
@@ -34,3 +47,29 @@
     height: 100vh;
     opacity: 0.5;
   }
+
+
+.navbar-nav .nav-item .nav-link{
+    font-size: 1.4em;
+    font-weight: 400;
+
+}
+
+.dropdown-menu {
+    display: block;
+    visibility: hidden;
+    opacity:0;
+    transform: translateY(-10px);
+    transition:.5s ease all;
+}
+.dropdown-menu.show {display: block;
+    visibility: visible;
+    opacity:1;
+    transform: translateY(0px);
+    transition:.5s ease all;
+}
+
+.img-fluid{
+    min-height: 16rem;
+    max-height: 16rem;
+}
