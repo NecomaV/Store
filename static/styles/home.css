@@ -74,6 +74,8 @@
     max-height: 16rem;
 }
 
-.navbar{
-
+.wrap{
+    display: flex;
+    flex-direction: row;
+    border: red 2px solid;
 }
