@@ -1,0 +1,11 @@
+
+footer{
+    letter-spacing: 1px;
+    border-top: .2rem solid grey!important;
+}
+
+
+footer  .link-secondary{
+    text-decoration: none;
+}
+

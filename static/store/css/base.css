@@ -1,3 +1,5 @@
+
+
 /* Bootstrap Over-ride */
 @media (min-width: 1000px){
     .container{
@@ -10,6 +12,8 @@
         padding:0 24px;
     }
 }
+
+
 
 .alert-primary{
     background-color: #E4F1FF;
@@ -65,6 +69,3 @@ html, body, p, div{
 
 /* Footer */
 
-.footer > div > div > ul > li{
-    padding-bottom:8px;
-}
