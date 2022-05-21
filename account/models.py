@@ -3,7 +3,7 @@ from django.contrib.auth.models import (AbstractBaseUser, BaseUserManager,
 from django.core.mail import send_mail
 from django.db import models
 from django.utils.translation import gettext_lazy as _
-
+import uuid
 
 
 class CustomAccountManager(BaseUserManager):
@@ -40,16 +40,6 @@ class UserBase(AbstractBaseUser, PermissionsMixin):
 
     email = models.EmailField(_('email address'), unique=True)
     user_name = models.CharField(max_length=150, unique=True)
-    first_name = models.CharField(max_length=150, blank=True)
-    about = models.TextField(_(
-        'about'), max_length=500, blank=True)
-    # Delivery details
-    country = models.CharField(max_length=150, blank=True)
-    phone_number = models.CharField(max_length=15, blank=True)
-    postcode = models.CharField(max_length=12, blank=True)
-    address_line_1 = models.CharField(max_length=150, blank=True)
-    address_line_2 = models.CharField(max_length=150, blank=True)
-    town_city = models.CharField(max_length=150, blank=True)
     # User Status
     is_active = models.BooleanField(default=True)
     is_staff = models.BooleanField(default=False)
@@ -76,3 +66,27 @@ class UserBase(AbstractBaseUser, PermissionsMixin):
 
     def __str__(self):
         return self.user_name
+
+class Address(models.Model):
+    """
+    Address
+    """
+
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    customer = models.ForeignKey(UserBase, verbose_name=_("Customer"), on_delete=models.CASCADE)
+    full_name = models.CharField(_("Full Name"), max_length=150)
+    phone = models.CharField(_("Phone Number"), max_length=50)
+    postcode = models.CharField(_("Postcode"), max_length=50)
+    address_line = models.CharField(_("Address Line 1"), max_length=255)
+    town_city = models.CharField(_("Town/City/State"), max_length=150)
+    delivery_instructions = models.CharField(_("Delivery Instructions"), max_length=255)
+    created_at = models.DateTimeField(_("Created at"), auto_now_add=True)
+    updated_at = models.DateTimeField(_("Updated at"), auto_now=True)
+    default = models.BooleanField(_("Default"), default=False)
+
+    class Meta:
+        verbose_name = "Address"
+        verbose_name_plural = "Addresses"
+
+    def __str__(self):
+        return "Address"

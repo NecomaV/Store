@@ -1,35 +1,30 @@
+from django.contrib import messages
 from django.contrib.auth import login, logout
-from django.contrib.auth.decorators import login_required   
-from django.http import HttpResponse
-from django.shortcuts import redirect, render
+from django.contrib.auth.decorators import login_required
+from django.contrib.sites.shortcuts import get_current_site
+from django.http import HttpResponse, HttpResponseRedirect
+from django.shortcuts import get_object_or_404, redirect, render
+from django.template.loader import render_to_string
+from django.urls import reverse
+from orders.models import Order
+from orders.views import user_orders
+from store.models import Product
 
+from .forms import RegistrationForm, UserAddressForm
+from .models import Address
 
-# from orders.views import user_orders
+from orders.views import user_orders
 
-from .forms import RegistrationForm, UserEditForm
+from .forms import RegistrationForm
 from .models import UserBase
 from .token import account_activation_token
 
 
 @login_required
 def dashboard(request):
-    return render(request,
-                  'account/user/dashboard.html')
-                 
-
-
-# @login_required
-# def edit_details(request):
-#     if request.method == 'POST':
-#         user_form = UserEditForm(instance=request.user, data=request.POST)
-
-#         if user_form.is_valid():
-#             user_form.save()
-#     else:
-#         user_form = UserEditForm(instance=request.user)
-
-#     return render(request,
-#                   'account/user/edit_details.html', {'user_form': user_form})
+    user_id = request.user.id
+    orders = Order.objects.filter(user_id=user_id).filter(billing_status=True)
+    return render(request, "account/user/dashboard.html", {"orders": orders}) 
 
 def account_register(request):
 
@@ -49,4 +44,28 @@ def account_register(request):
     return render(request, 'account/registration/register.html', {'form': registerForm})
     return redirect('account:dashboard')
 
+@login_required
+def view_address(request):
+    addresses = Address.objects.filter(customer=request.user)
+    return render(request, "checkout/delivery_address.html", {"addresses": addresses})
+
+@login_required
+def add_address(request):
+    if request.method == "POST":
+        address_form = UserAddressForm(data=request.POST)
+        if address_form.is_valid():
+            address_form = address_form.save(commit=False)
+            address_form.customer = request.user
+            address_form.save()
+            return HttpResponseRedirect(reverse("checkout:delivery_address"))
+    else:
+        address_form = UserAddressForm()
+    return render(request, "checkout/add_address_form.html", {"form": address_form})
+
+
+# @login_required
+# def user_orders(request):
+#     user_id = request.user.id
+#     orders = Order.objects.filter(user_id=user_id).filter(billing_status=True)
+#     return render(request, "account/user/dashboard.html", {"orders": orders})    
         
