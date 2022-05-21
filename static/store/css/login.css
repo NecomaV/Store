@@ -1,0 +1,434 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed');
+*,
+*:before,
+*:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+
+html {
+    height: 100%;
+    font-size: 10px;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+body {
+    font-family: 'Roboto Condensed', sans-serif;
+    background: #f2f2f2;
+}
+
+body #kc-logo-wrapper {
+    background: transparent;
+    top: 50px;
+    right: 50px;
+    width: 250px;
+    display: none;
+}
+
+span.kc-feedback-text {
+    white-space: nowrap;
+}
+
+body {
+    background: rgb(255, 255, 255);
+    background: url(https://images.unsplash.com/photo-1510577956525-69bd3c29339e?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170) center bottom no-repeat;
+    background-size: cover;
+    background-color: #1a1a1a;
+}
+
+.container .form-horizontal .control-label {
+    font-size: 16px;
+    margin-left: 7px;
+    padding-bottom: 4px;
+    padding-top: 0px;
+}
+
+.checkbox,
+.forgotpwd {
+    margin-left: 7px;
+}
+
+#kc-container-wrapper {
+    opacity: 0;
+}
+
+p.instruction {
+    font-size: 18px;
+}
+
+a {
+    color: #ffffff;
+}
+
+body #kc-info {
+    width: 100%;
+    padding: 20px;
+}
+
+#kc-header-wrapper {
+    display: none;
+}
+
+div#kc-container-wrapper {
+    position: fixed;
+    width: 365px;
+    height: 500px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) matrix(1, 0, 0, 1, 0, 0);
+    background: linear-gradient(180deg, rgba(80, 18, 83, 0.6) 0%, rgba(49, 25, 73, 0.8) 100%);
+    border-radius: 10px;
+    padding-top: 0;
+    box-shadow: 0px 4px 15px 2px rgb(18, 2, 23);
+    border-bottom: 1px solid #000008;
+}
+
+#toploginoverflowwrapper {
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+#kc-content-wrapper {
+    margin: 0;
+    overflow: visible;
+}
+
+div#toploginlogowrapper svg {
+    display: block;
+    margin: 0 auto;
+    width: 250px;
+    height: 47px;
+    margin-top: 20px;
+}
+
+#kc-form-options a {
+    color: white;
+    text-decoration: none;
+}
+
+div#toploginlogowrapper {
+    height: 145px;
+    background: rgba(0, 0, 0, 0.18);
+    padding: 20px;
+    width: 120%;
+    margin-left: -10%;
+    border-bottom-left-radius: 50%;
+    border-bottom-right-radius: 50%;
+    border: 1px solid #fe7d68;
+}
+
+div#kc-container-wrapperrel {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+body .checkbox label {
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding-left: 0px;
+}
+
+.checkbox-overlay {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    z-index: 2;
+}
+
+input#rememberMe {
+    display: none;
+}
+
+input#rememberMe:checked+.checkbox-indicator::before {
+    top: 50%;
+    left: 77%;
+    background: #f9bf14;
+}
+
+.checkbox-indicator::before {
+    content: "";
+    position: absolute;
+    width: 28px;
+    height: 28px;
+    top: 10px;
+    left: 23%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    background: #000000;
+    box-shadow: 0 0.2rem 0.2rem rgba(0, 0, 0, 0.3);
+    transition: 0.3s;
+}
+
+.checkbox-indicator {
+    width: 50px;
+    height: 18px;
+    background: #4b284d;
+    border-radius: 1rem;
+    position: relative;
+    display: table-cell;
+}
+
+#kc-header-wrapper {
+    display: none;
+}
+
+.forgotpwd {
+    margin-top: 10px;
+}
+
+body #kc-form-options .checkbox span {
+    display: table-cell;
+    padding-left: 14px;
+    width: 100px;
+}
+
+.checkbox {
+    display: table;
+    width: 300px;
+}
+
+div#kc-form-wrapper {
+    display: table;
+    width: 100%;
+}
+
+div#kc-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    background-color: transparent;
+}
+
+.fullwidth {
+    width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.halfwidth {
+    width: 50%;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.btn {
+    display: inline-block;
+    margin-bottom: 0;
+    font-weight: 600;
+    text-align: center;
+    vertical-align: middle;
+    touch-action: manipulation;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid transparent;
+    white-space: nowrap;
+    padding: 2px 6px;
+    font-size: 12px;
+    line-height: 1.66666667;
+    border-radius: 1px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    padding: 6px 10px;
+    line-height: 1.3333333;
+}
+
+input[type="submit"] {
+    -webkit-appearance: button;
+    cursor: pointer;
+}
+
+input:-webkit-autofill {
+    /* -webkit-box-shadow: 0 0 0 1000px white inset !important; */
+    -webkit-text-fill-color: #009edc;
+}
+
+input.form-control {
+    border: 1px solid #fe7d68;
+    border-radius: 150px;
+    padding: 0 20px;
+    height: 42px;
+    font-size: 16px;
+    line-height: 16px;
+    caret-color: #fbb73c;
+    color: #fbcf0a;
+    display: block;
+    width: 100%;
+    background: rgba(54, 25, 81, 0.61);
+}
+
+label {
+    color: #ffffff;
+    display: inline-block;
+    max-width: 100%;
+    margin-bottom: 5px;
+    font-weight: 400;
+    text-align: left;
+}
+
+.form-group {
+    margin-left: -20px;
+    margin-right: -20px;
+    margin-bottom: 15px;
+}
+
+input#kc-login,
+.btn-lg {
+    border: 1px solid #fe7d68;
+    border-radius: 50%;
+    height: 100px;
+    box-shadow: 1px 0px 30px 0px rgb(37, 6, 45);
+    color: #ffffff;
+    width: 100px;
+    position: absolute;
+    font-size: 20px;
+    bottom: -25px;
+    right: -25px;
+    background: rgb(249, 46, 144);
+    background: linear-gradient(180deg, rgb(249, 213, 2) 00%, rgb(249, 35, 145) 100%);
+    color: #ffffff;
+}
+
+div#kc-form-buttons {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+form#kc-form-login {
+    height: 220px;
+    display: table-cell;
+    width: 100%;
+    vertical-align: middle;
+}
+
+div#kc-form {
+    width: 315px;
+    display: block;
+    margin: 0 auto;
+    float: none;
+    padding: 0;
+    position: initial;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+@media (max-width: 991px) {}
+
+@media (max-width: 767px) {
+    div#kc-container-wrapper {
+        width: 320px;
+    }
+    div#kc-form {
+        width: 320px;
+        margin: 0;
+    }
+    .form-horizontal .form-group {
+        margin-left: 0px;
+        margin-right: 0px;
+        width: 320px;
+        margin: 0;
+    }
+    .form-horizontal .checkbox {
+        min-height: 23px;
+        margin-top: 10px;
+    }
+    .container .form-horizontal .control-label {
+        padding-bottom: 0px;
+        padding-top: 0px;
+        margin-top: 10px;
+        font-size: 14px;
+    }
+    #kc-container-wrapper {
+        padding-top: 0px;
+    }
+    div#toploginlogowrapper {
+        height: 90px;
+    }
+    div#toploginlogowrapper svg {
+        margin-top: 4px;
+        width: 190px;
+        height: 36px;
+    }
+    input#kc-login,
+    .btn-lg {
+        height: 75px;
+        width: 75px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 380px) {
+    div#kc-container-wrapper {
+        width: 280px;
+    }
+    div#kc-form {
+        width: 280px;
+        margin: 0;
+    }
+    .form-horizontal .form-group {
+        margin-left: 0px;
+        margin-right: 0px;
+        width: 280px;
+        margin: 0;
+    }
+    .form-horizontal .checkbox {
+        min-height: 23px;
+        margin-top: 10px;
+    }
+    .container .form-horizontal .control-label {
+        padding-bottom: 0px;
+        padding-top: 0px;
+        margin-top: 10px;
+    }
+    div#kc-container-wrapper {
+        height: 490px;
+    }
+    input#kc-login {
+        right: -10px;
+    }
+}
+
+@media (max-height: 720px) {
+    div#kc-form {
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+    div#kc-container-wrapper {
+        height: 420px;
+        top: 15px;
+    }
+}
+
+_:-ms-lang(x),
+body input#kc-login {
+    top: 15px;
+    right: -50px;
+}
+
+_:-webkit-full-screen,
+body input#kc-login {
+    top: unset;
+    bottom: -25px;
+    right: -25px;
+}
