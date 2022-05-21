@@ -6,7 +6,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import get_object_or_404, redirect, render
 from django.template.loader import render_to_string
 from django.urls import reverse
-from orders.models import Order
+from orders.models import Order, OrderItem
 from orders.views import user_orders
 from store.models import Product
 
@@ -20,12 +20,11 @@ from .models import UserBase
 from .token import account_activation_token
 
 
-@login_required
-def dashboard(request):
-    user_id = request.user.id
-    orders = Order.objects.filter(user_id=user_id).filter(billing_status=True)
-    return render(request, "account/user/dashboard.html", {"orders": orders}) 
-
+# @login_required
+# def dashboard(request):
+#    orders=user_orders(request)
+#    return render(request, 'account/user/dashboard.html',{'orders':orders})
+   
 def account_register(request):
 
     if request.user.is_authenticated:
@@ -63,9 +62,9 @@ def add_address(request):
     return render(request, "checkout/add_address_form.html", {"form": address_form})
 
 
-# @login_required
-# def user_orders(request):
-#     user_id = request.user.id
-#     orders = Order.objects.filter(user_id=user_id).filter(billing_status=True)
-#     return render(request, "account/user/dashboard.html", {"orders": orders})    
+@login_required
+def user_orders(request):
+    user_id = request.user.id
+    orders = Order.objects.filter(user_id=user_id).filter(billing_status=True)
+    return render(request, "account/user/dashboard.html", {"orders": orders})    
         

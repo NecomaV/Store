@@ -16,6 +16,7 @@ def delivery_address(request):
 
 @login_required
 def payment_selection(request):
+    session = request.session
     return render(request, "checkout/payment_selection.html", {})
 
 

@@ -77,7 +77,7 @@
               orderID: data.orderID
             })
           }).then(function () {
-            location.href = '';
+            {% comment %} location.href = '{% url 'checkout:payment_successful' %}'; {% endcomment %}
           })
         },
       }).render('#paypal-button-container');
