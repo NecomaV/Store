@@ -1,0 +1,21 @@
+.carousel{
+    margin-top: 10%;
+}
+
+.carousel-item{
+    height: 35rem;
+}
+
+.carousel-caption{
+    max-height: 10rem;
+    background-color: rgba(0, 0, 0, 0.614);
+    position: absolute;
+    top: 43%;
+    margin-top: -1em;
+    font-size: 2rem;
+
+}
+
+.carousel-caption p{
+    margin-top: 3%;
+}
