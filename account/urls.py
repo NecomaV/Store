@@ -16,7 +16,7 @@ urlpatterns = [
                                                 form_class=UserLoginForm), name='login'),
     path('logout/', auth_views.LogoutView.as_view(next_page='/account/login/'), name='logout'),                                            
     path('register/', views.account_register, name='register'),
-    path('dashboard/', views.dashboard, name='dashboard'),
+    path('dashboard/', views.user_orders, name='dashboard'),
     path("add_address/", views.add_address, name="add_address"),
     path("addresses/", views.view_address, name="addresses"),
     # path("user_orders/", views.user_orders, name="user_orders"),
