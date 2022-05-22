@@ -151,6 +151,7 @@
                                 </div>
                                 <form id="kc-form-login" class="form-horizontal"
                                     onsubmit="login.disabled = true; return true;" action="#" method="post">
+                                    {% csrf_token %}
                                     <div class="form-group">
     
     
